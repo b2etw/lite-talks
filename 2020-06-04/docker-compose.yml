@@ -1,17 +1,19 @@
 version: '3'
 
 services:
-  ### 3rd services ###
+  ### cache ###
   redis:
-    image: redis:${redis_version}
+    image: redis:${REDIS_VERSION}
     expose:
       - 6379
     ports:
       - "6379:6379"
     networks:
       - default
+
+  ### database ###
   mysql: # root/123456
-    image: mysql:${mysql_version}
+    image: mysql:${MYSQL_VERSION}
     environment:
       MYSQL_ROOT_PASSWORD: "123456"
     expose:
