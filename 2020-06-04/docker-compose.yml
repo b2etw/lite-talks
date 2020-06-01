@@ -15,7 +15,7 @@ services:
   mysql: # root/123456
     image: mysql:${MYSQL_VERSION}
     environment:
-      MYSQL_ROOT_PASSWORD: "123456"
+      - MYSQL_ROOT_PASSWORD="123456"
     expose:
       - 3306
     ports:
