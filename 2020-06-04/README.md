@@ -9,3 +9,4 @@
 * Explain Keywords
 
 https://docs.docker.com/compose/compose-file/
+https://kubernetes.io/docs/reference/kubectl/overview/#resource-types
