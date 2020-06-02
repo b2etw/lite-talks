@@ -5,7 +5,7 @@ from flask import make_response, Flask
 
 app = Flask(__name__)
 
-logging.basicConfig(filename="app.log",
+logging.basicConfig(filename="./log/app.log",
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     level=logging.DEBUG)
 

@@ -1,6 +1,18 @@
 version: '3'
 
 services:
+  python-sample:
+    image: taiwanbackendgroup/python-sample:1.0.0
+    volumes:
+      - ./log:/python-sample/log
+    environment:
+      - first=Vincent
+      - last=Huang
+    ports:
+      - "5000:5000"
+    networks:
+      - default
+
   ### cache ###
   redis:
     image: redis:${REDIS_VERSION}
