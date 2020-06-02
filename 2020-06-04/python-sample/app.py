@@ -10,7 +10,7 @@ logging.basicConfig(filename="./log/app.log",
                     level=logging.DEBUG)
 
 
-@app.route("/", methods=["GET"])
+@app.route("/env", methods=["GET"])
 def root():
     value1 = os.getenv("first")
     value2 = os.getenv("last")
