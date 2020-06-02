@@ -12,6 +12,16 @@ services:
       - "5000:5000"
     networks:
       - default
+  
+  java-sample:
+    image: taiwanbackendgroup/java-sample:1.0.0
+    environment:
+      - first=Vincent
+      - last=Huang
+    ports:
+      - "8080:8080"
+    networks:
+      - default
 
   ### cache ###
   redis:
