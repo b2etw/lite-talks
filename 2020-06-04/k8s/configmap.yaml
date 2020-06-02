@@ -1,0 +1,39 @@
+{{ $activeProfiles := .Values.common.activeProfiles }}
+{{ $traceUrl := .Values.common.trace.url }}
+{{ $logstashUrl := .Values.stage.rb88.logstash.url.wallet }}
+{{ $redisHost := .Values.stage.rb88.redis.host.wallet }}
+{{ $redisPassword := .Values.stage.rb88.redis.password.wallet }}
+{{ $rabbitmqHost := .Values.stage.rb88.rabbitmq.host.wallet }}
+{{ $rabbitmqUsername := .Values.stage.rb88.rabbitmq.username.wallet }}
+{{ $rabbitmqPassword := .Values.stage.rb88.rabbitmq.password.wallet }}
+{{ $databaseUrl := .Values.stage.rb88.database.url.wallet }}
+{{ $databaseUsername := .Values.stage.rb88.database.username.wallet }}
+{{ $databasePassword := .Values.stage.rb88.database.password.wallet }}
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wallet-service
+  labels:
+    app: wallet-service
+data:
+  TZ: Asia/Taipei
+  activeProfiles: {{ $activeProfiles }}
+  logstashUrl: {{ $logstashUrl }}
+  application.yml: |-
+    spring:
+      profiles: {{ $activeProfiles }}
+      redis:
+        host: {{ $redisHost }}
+        password: {{ $redisPassword }}
+      datasource:
+        url: {{ $databaseUrl }}
+        username: {{ $databaseUsername }}
+        password: {{ $databasePassword }}
+    queue:
+      rabbitmq:
+        host: {{ $rabbitmqHost }}
+        username: {{ $rabbitmqUsername }}
+        password: {{ $rabbitmqPassword }}
+    trace:
+      url: {{ $traceUrl }}
