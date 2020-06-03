@@ -1,12 +1,10 @@
 # First Step from Docker to Kubernetes
 
-### Agenda
-* Prerequisite
-* Face to Face, docker-compose.yaml vs
-  * deployment.yaml
-  * service.yaml
-  * configmap.yaml
-* Explain Keywords
+### Directory
+* [java-sample](./java-sample/README.md) -> sample project of java service 
+* [k8s](](./k8s/README.md)) -> sample deployment project kubernetes
+* [python-sample](./python-sample/README.md) -> sample project of python service
 
-https://docs.docker.com/compose/compose-file/
-https://kubernetes.io/docs/reference/kubectl/overview/#resource-types
+### References
+* https://docs.docker.com/compose/compose-file/
+* https://kubernetes.io/docs
