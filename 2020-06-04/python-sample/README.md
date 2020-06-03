@@ -1,4 +1,6 @@
-## setup venv
+# python-sample
+
+### setup venv
 ```
 $ pip3 install virtualenv
 $ virtualenv venv
@@ -6,7 +8,7 @@ $ source venv/bin/activate
 $ deactivate
 ```
 
-## pip install
+### pip install
 ```
 (venv) $ pip3 install Flask
  or
@@ -14,7 +16,9 @@ $ deactivate
 (venv) $ pip3 freeze | tee requirements.txt
 ```
 
-## Docker Build
+### Docker Build
 ```
+$ docker login
 $ docker build -t taiwanbackendgroup/python-sample:1.0.0 .
+$ docker push
 ```
