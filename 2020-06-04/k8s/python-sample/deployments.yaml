@@ -25,10 +25,10 @@ spec:
                 configMapKeyRef:
                   key: first
                   name: python-sample
-            - name: second
+            - name: last
               valueFrom:
                 configMapKeyRef:
-                  key: second
-                  name: sample-sample
+                  key: last
+                  name: python-sample
           image: taiwanbackendgroup/python-sample:1.0.0
           imagePullPolicy: Always

@@ -6,4 +6,4 @@ metadata:
     app: python-sample
 data:
   first: Daniel
-  second: Liu
+  last: Liu

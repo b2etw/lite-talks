@@ -35,10 +35,10 @@ spec:
                 configMapKeyRef:
                   key: first
                   name: java-sample
-            - name: second
+            - name: last
               valueFrom:
                 configMapKeyRef:
-                  key: second
+                  key: last
                   name: java-sample
           image: taiwanbackendgroup/java-sample:1.0.0
           imagePullPolicy: Always
