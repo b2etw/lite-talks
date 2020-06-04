@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-sample-v1
+  labels:
+    app: java-sample
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-sample
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: java-sample
+        version: v1
+    spec:
+      containers:
+        - name: java-sample
+          env:
+            - name: TZ
+              valueFrom:
+                configMapKeyRef:
+                  key: TZ
+                  name: java-sample
+            - name: activeProfiles
+              valueFrom:
+                configMapKeyRef:
+                  key: activeProfiles
+                  name: java-sample
+            - name: first
+              valueFrom:
+                configMapKeyRef:
+                  key: first
+                  name: java-sample
+            - name: second
+              valueFrom:
+                configMapKeyRef:
+                  key: second
+                  name: java-sample
+          image: taiwanbackendgroup/java-sample:1.0.0
+          imagePullPolicy: Always

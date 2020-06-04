@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: java-sample
+  labels:
+    app: java-sample
+data:
+  TZ: Asia/Taipei
+  activeProfiles: {{ $activeProfiles }}
+  first: Daniel
+  second: Liu
+  application.yml: |-
+    spring:
+      profiles: k8s
+    custom.key=in-configmap

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-sample-v1
+  labels:
+    app: python-sample
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-sample
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: python-sample
+        version: v1
+    spec:
+      containers:
+        - name: python-sample
+          env:
+            - name: first
+              valueFrom:
+                configMapKeyRef:
+                  key: first
+                  name: python-sample
+            - name: second
+              valueFrom:
+                configMapKeyRef:
+                  key: second
+                  name: sample-sample
+          image: taiwanbackendgroup/python-sample:1.0.0
+          imagePullPolicy: Always
